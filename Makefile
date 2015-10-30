@@ -13,7 +13,7 @@ endif
 all: clean $(PROG)
 
 $(PROG): $(SOURCES)
-	$(CC) $(SOURCES) -o $@ $(CFLAGS)
+	$(CC) $(SOURCES) -o dest/$@ $(CFLAGS)
 
 $(PROG).exe: $(SOURCES)
 	cl $(SOURCES) /I.. /MD /Fe$@
