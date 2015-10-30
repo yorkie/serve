@@ -1,5 +1,4 @@
-
-#include "mongoose/mongoose.h"
+#include "mongoose.h"
 
 static const char *s_http_port = "8000";
 static int s_sig_num = 0;

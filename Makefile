@@ -1,5 +1,5 @@
 PROG = serve
-SOURCES = $(PROG).c mongoose/mongoose.c
+SOURCES = $(PROG).c mongoose.c
 CFLAGS = -W -Wall -pthread $(CFLAGS_EXTRA)
 
 ifeq ($(OS), Windows_NT)
