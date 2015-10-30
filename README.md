@@ -8,8 +8,10 @@ A tiny server(executable) for serving static files without any runtime like Pyth
 > Currently this only supports OSX
 
 ```
-$ serve -r [dir]
+$ dest/serve -r [dir]
 ```
+
+The default directory is `./public`.
 
 ## Build
 
