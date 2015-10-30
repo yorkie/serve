@@ -13,6 +13,10 @@ $ dest/serve -r [dir]
 
 The default directory is `./public`.
 
+## Downloads
+
+All available downloads links is here: https://github.com/yorkie/serve/releases
+
 ## Build
 
 ```
