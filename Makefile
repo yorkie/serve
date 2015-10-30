@@ -13,6 +13,7 @@ endif
 all: clean $(PROG)
 
 $(PROG): $(SOURCES)
+	@mkdir -p dest
 	$(CC) $(SOURCES) -o dest/$@ $(CFLAGS)
 
 $(PROG).exe: $(SOURCES)
