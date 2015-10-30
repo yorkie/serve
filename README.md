@@ -1,7 +1,7 @@
 
 # serve
 
-A tiny server(executable) for serving static files without any runtime like Python/Node.js/Ruby required.
+A tiny(~140kb) server(executable) for serving static files without any runtime like Python/Node.js/Ruby required.
 
 ## Usage
 
