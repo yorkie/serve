@@ -3,19 +3,27 @@
 
 A tiny(~140kb) server(executable) for serving static files without any runtime like Python/Node.js/Ruby required.
 
+## Why I create this
+
+Sometimes I hope to deliver document or website to someone, which runtime/machine is not the Mac and installed Python,
+Node.js and etc., Yea, the file protocol doesn't not address the relative and absolute path issue, because the file
+protocol would depend strongly on what the machine's folders structure, hence, I created this tiny cross-platform
+executable to run html files in HTTP protocol without any runtime required.
+
 ## Usage
 
 > Currently this only supports OSX
 
 ```
-$ dest/serve -r [dir]
+$ dest/serve -r [dir] -p [port]
 ```
 
-The default directory is `./public`.
+- `-r` the directory to serve, default directory is the relative path `./public`.
+- `-p` specify the port to listen, default is 8000.
 
 ## Downloads
 
-All available downloads links is here: https://github.com/yorkie/serve/releases
+All available downloads are here: https://github.com/yorkie/serve/releases
 
 ## Build
 

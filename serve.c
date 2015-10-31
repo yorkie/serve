@@ -25,25 +25,29 @@ int main (int argc, char const *argv[]) {
   struct mg_connection *nc;
   int i;
 
-  /* Start listening */
-  mg_mgr_init(&mgr, NULL);
-  nc = mg_bind(&mgr, s_http_port, ev_handler);
-  mg_set_protocol_http_websocket(nc);
+  /* set the default root */
   s_http_server_opts.document_root = "public";
 
   /* Parse command line arguments */
   for (i = 1; i < argc; i++) {
     if (strcmp(argv[i], "-r") == 0) {
       s_http_server_opts.document_root = argv[++i];
+    } else if (strcmp(argv[i], "-p") == 0) {
+      s_http_port = argv[++i];
     }
   }
 
+  /* Start listening */
+  mg_mgr_init(&mgr, NULL);
+  nc = mg_bind(&mgr, s_http_port, ev_handler);
+
+  /* Handle with signals */
   signal(SIGINT, signal_handler);
   signal(SIGTERM, signal_handler);
 
   /* Run event loop until signal is received */
-  printf("Starting file server on port %s at directory %s\n", 
-    s_http_port, 
+  printf("Starting file server on port %s at directory %s\n",
+    s_http_port,
     s_http_server_opts.document_root);
   while (s_sig_num == 0) {
     mg_mgr_poll(&mgr, 1000);
