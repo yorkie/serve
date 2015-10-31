@@ -6,7 +6,7 @@ A tiny(~140kb) server(executable) for serving static files without any runtime l
 ## Why I create this
 
 Sometimes I hope to deliver document or website to someone, which runtime/machine is not the Mac and installed Python,
-Node.js and etc., Yea, the file protocol doesn't not address the relative and absolute path issue, because the file
+Node.js and etc. Yea, the file protocol does not address the relative and absolute path issue, because the file
 protocol would depend strongly on what the machine's folders structure, hence, I created this tiny cross-platform
 executable to run html files in HTTP protocol without any runtime required.
 
