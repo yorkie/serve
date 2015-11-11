@@ -26,7 +26,7 @@ int main (int argc, char const *argv[]) {
   int i;
 
   /* set the default root */
-  s_http_server_opts.document_root = "public";
+  s_http_server_opts.document_root = "./public";
 
   /* Parse command line arguments */
   for (i = 1; i < argc; i++) {
@@ -43,8 +43,12 @@ int main (int argc, char const *argv[]) {
   /* Start listening */
   mg_mgr_init(&mgr, NULL);
   nc = mg_bind(&mgr, s_http_port, ev_handler);
-
+  if (nc == NULL) {
+    fprintf(stderr, "mg_bind(%s) failed\n", s_http_port);
+    return EXIT_FAILURE;
+  }
   mg_set_protocol_http_websocket(nc);
+
   /* Handle with signals */
   signal(SIGINT, signal_handler);
   signal(SIGTERM, signal_handler);
