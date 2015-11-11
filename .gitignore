@@ -6,3 +6,4 @@
 *.o 
 a.out
 dest/
+public/
