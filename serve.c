@@ -41,6 +41,7 @@ int main (int argc, char const *argv[]) {
   mg_mgr_init(&mgr, NULL);
   nc = mg_bind(&mgr, s_http_port, ev_handler);
 
+  mg_set_protocol_http_websocket(nc);
   /* Handle with signals */
   signal(SIGINT, signal_handler);
   signal(SIGTERM, signal_handler);
