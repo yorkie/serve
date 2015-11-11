@@ -1,6 +1,6 @@
 {
   "name": "serve",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repo": "yorkie/serve",
   "description": "a tiny server for serving static files and website, no any other runtime required based on mongoose.",
   "src": [
