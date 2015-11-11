@@ -32,8 +32,11 @@ int main (int argc, char const *argv[]) {
   for (i = 1; i < argc; i++) {
     if (strcmp(argv[i], "-r") == 0) {
       s_http_server_opts.document_root = argv[++i];
-    } else if (strcmp(argv[i], "-p") == 0) {
+    } else if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "--port") == 0) {
       s_http_port = argv[++i];
+    } else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
+      printf("\n  $ dest/serve -r [dir] -p [port]\n\n");
+      return 0;
     }
   }
 
