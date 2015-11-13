@@ -45,6 +45,7 @@ int main (int argc, char const *argv[]) {
   nc = mg_bind(&mgr, s_http_port, ev_handler);
   if (nc == NULL) {
     fprintf(stderr, "mg_bind(%s) failed\n", s_http_port);
+    mg_mgr_free(&mgr);
     return EXIT_FAILURE;
   }
   mg_set_protocol_http_websocket(nc);
