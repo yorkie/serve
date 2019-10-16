@@ -4975,6 +4975,8 @@ static void send_directory_listing(struct mg_connection *nc, const char *dir,
       "<tr><td colspan=\"3\"><hr></td></tr></thead><tbody id=tb>",
       (int) hm->uri.len, hm->uri.p, sort_js_code, sort_js_code2,
       (int) hm->uri.len, hm->uri.p);
+  mg_printf_http_chunk(nc, "<tr><td><a href=\"/\">/</a></td>");
+  mg_printf_http_chunk(nc, "<tr><td><a href=\"../\">../</a></td>");
   scan_directory(nc, dir, opts, print_dir_entry);
   mg_printf_http_chunk(nc, "%s", "</tbody></body></html>");
   mg_send_http_chunk(nc, "", 0);
